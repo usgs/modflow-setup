@@ -271,7 +271,7 @@ def fill_cells_vertically(top, botm):
     filled += np.nanmin(all_surfaces, axis=0)  # botm[-1]
     # append the model bottom elevations
     filled = np.append(filled, [np.nanmin(all_surfaces, axis=0)], axis=0)
-    return filled[1:].copy()
+    return top, filled[1:].copy()
 
 
 def fix_model_layer_conflicts(top_array, botm_array,
